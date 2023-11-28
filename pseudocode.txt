@@ -1,0 +1,25 @@
+1. Create HTML structure for the crossword grid:
+    - Use div to represent each square in the grid.
+    - Number each square for the starting point of each entry.
+
+2. Style the grid using CSS:
+    - Define styles for black and white squares.
+    - Create JS event so black squares cannot be clicked.
+    - Add CSS rules for numbering and highlighting active squares.
+
+3. Populate the grid with words:
+    - Use JavaScript to fill in the grid with words, aligning with the numbering.
+    - Clue bank on bottom/side with corresponding numbers for "down" and "across."
+
+4. User interaction:
+    - Add event listeners to detect when a square is clicked.
+
+5. Inputting answers:
+    - Implement input fields for users to enter their answers.
+    - Use function to validate user input against the correct answers.
+
+6. Track progress:
+    - Create a system to track completed words and overall puzzle completion.
+    - Update the grid/clue bank to show progress.
+
+
