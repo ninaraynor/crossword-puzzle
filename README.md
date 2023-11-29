@@ -1,7 +1,7 @@
 # **Crossword Puzzle**
 ### Description
 ***
-#### Widely recognized by enthusiasts of all ages, the Crossword Puzzle is an engaging and intellectually stimulating word game that takes the form of a grid composed of black and white squares. 
+#### Widely recognized by enthusiasts of all ages, the Crossword Puzzle is an engaging and intellectually stimulating word game that takes the form of a grid composed of black and white squares. ``
 ***
 ### Solve the Puzzle
 *** 
