@@ -24,4 +24,9 @@ header {
 
 #gameboard {
     margin-top: 5em;
+    border-collapse: collapse;
+}
+
+.black-cell {
+    background-color: black;
 }
