@@ -1,4 +1,6 @@
 1. Create HTML structure for the crossword grid:
+    - Generate theme of puzzle with words.
+    - Compile how many rows/columns/individual squares needed which will be divided as divs.
     - Use div to represent each square in the grid.
     - Number each square for the starting point of each entry.
 
@@ -8,8 +10,17 @@
     - Add CSS rules for numbering and highlighting active squares.
 
 3. Populate the grid with words:
+    - Create function of gameboard and use loop to fill in squares.
     - Use JavaScript to fill in the grid with words, aligning with the numbering.
     - Clue bank on bottom/side with corresponding numbers for "down" and "across."
+    - Create object for the words to indicate text of the word, row#, column re: across or down.
+        
+        function word(text, row, column, across) {
+            this.text = text;
+            this.row = row;
+            this.column - column;
+            this.across = across;
+        }
 
 4. User interaction:
     - Add event listeners to detect when a square is clicked.
