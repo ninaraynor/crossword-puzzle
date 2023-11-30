@@ -10,11 +10,18 @@ body {
 }
 
 header {
-    font-size: 4vmin;
+    font-size: 3vmin;
     text-align: center;
+    margin-top: 10px;
 }
 
-#gameboard td {
+#gameboard {
+    margin-top: 5em;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+#gameboard td[contenteditable="true"] {
     border: .5px solid black;
     width: 30px;  
     height: 30px;  
@@ -22,9 +29,9 @@ header {
     font-size: 16px; 
 }
 
-#gameboard {
-    margin-top: 5em;
-    border-collapse: collapse;
+#gameboard td[contenteditable="true"]:focus {
+    outline: none; 
+    border: 1.5px solid black; 
 }
 
 .black-cell {

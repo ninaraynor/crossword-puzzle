@@ -28,6 +28,11 @@
 5. Inputting answers:
     - Implement input fields for users to enter their answers.
     - Use function to validate user input against the correct answers.
+    
+    function renderCrossword(isSuccess) {
+    const crosswordElement = document.getElementById('crossword');
+    crosswordElement.innerHTML = isSuccess ? generateCrosswordHtml(crosswordData)
+    }
 
 6. Track progress:
     - Create a system to track completed words and overall puzzle completion.
