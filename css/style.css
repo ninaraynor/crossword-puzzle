@@ -16,7 +16,7 @@ header {
 }
 
 #gameboard {
-    margin-top: 5em;
+    margin-top: 3em;
     border-collapse: collapse;
     cursor: pointer;
 }
@@ -38,4 +38,8 @@ header {
     background-color: white;
     border: none;
     visibility: hidden;
+}
+
+span {
+    position: absolute;
 }
