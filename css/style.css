@@ -34,6 +34,8 @@ header {
     border: 1.5px solid black; 
 }
 
-.black-cell {
-    background-color: black;
+.blank-cell {
+    background-color: white;
+    border: none;
+    visibility: hidden;
 }
