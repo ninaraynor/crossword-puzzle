@@ -34,12 +34,9 @@ header {
     border: 1.5px solid black; 
 }
 
-.blank-cell {
-    background-color: white;
-    border: none;
-    visibility: hidden;
+#clearButton {
+    margin-top: 20px;
 }
 
-span {
-    position: absolute;
-}
+
+

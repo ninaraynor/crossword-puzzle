@@ -32,7 +32,7 @@ const gameBoard = {
       { clue: "4. Francis Ford Coppola's epic crime drama", answer: "godfather" },
       { clue: "5. Quentin Tarantino's two-part crime film", answer: "killbill" },
       { clue: "6. David Fincher's thriller about a newspaper investigation", answer: "zodiac" },
-      { clue: "7. Classic romance set in a Moroccan city during World War II. (9)", answer: "casablanca" },
+      { clue: "7. Classic romance set in a Moroccan city during World War II", answer: "casablanca" },
       { clue: "8. CLUE FOR DONNIE BRASCO HERE", answer: "brasco" },
     ],
       down: [ 
@@ -44,7 +44,6 @@ const gameBoard = {
     };
 
     
-    
   // accessing a clue and answer
   const firstAcrossClue = answerClue.across[0].clue;
   const firstAcrossAnswer = answerClue.across[0].answer;
@@ -54,63 +53,64 @@ const gameBoard = {
     
 
 /*----- state variables -----*/
-
 let selectedCell;
 let wordAcross;
 let wordDown;
 let isSuccess;
-
 
 /*----- cached elements -----*/
 
 
 
 /*----- event listeners -----*/
-document.addEventListener('input', function (event) {
-  if (event.target.matches('.crossword-cell[contenteditable="true"]')) {
-      const userInput = event.target.textContent;
-      // logic to check the user's input against the solution
+
+// stop cells from expaning when pressing 'return'
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+      event.preventDefault();
+      if (selectedCell) {
+          selectedCell.blur();
+      }
   }
 });
 
+
+document.addEventListener('input', function (event) {
+  if (event.target.matches('.crossword-cell[contenteditable="true"]')) {
+      const userInput = event.target.textContent;
+  }
+});
+
+
+
+document.querySelectorAll('td').forEach(td => {
+  td.addEventListener('input', function() {
+    if (this.getAttribute('contenteditable') === 'true') {
+      if (this.textContent.length > 1) {
+        this.textContent = this.textContent.charAt(0);
+      }
+    }
+  });
+});
+
+
+//  event listener for the "Clear Board" button
 document.addEventListener('DOMContentLoaded', function() {
   // clear board button
   const clearButton = document.getElementById('clearButton');
   clearButton.addEventListener('click', function() {
-    
+
+    for (let row = 0; row < gameBoard.size.rows; row++) {
+      for (let col = 0; col < gameBoard.size.columns; col++) {
+        const cellId = `x${col + 1}y${row + 1}`;
+        const cell = document.getElementById(cellId);
+        cell.textContent = '';
+      }  
+    }  
+  ;
   });
 });
 
-document.querySelectorAll('td[contenteditable="true"]').forEach(td => {
-  td.addEventListener('input', function() {
-      if (this.textContent.length > 1) {
-          // Keep only the first character and remove the rest
-          this.textContent = this.textContent.charAt(0);
-      }
-  });
-});
-
-//  event listener for the "Clear Board" button
-document.getElementById("clearButton").addEventListener("click", function () {
-  //  logic to clear the board (reset all cells)
-});
-
-
-/*----- functions -----*/
-
-// init();
-
-// define init function here...then call render()
-
-//function init() {
-
-    // call render function here
-
-//};
-
-// render: 
-
-// function for checking if letter/word is correct:
 
 document.addEventListener("DOMContentLoaded", function () {
   
@@ -235,24 +235,173 @@ document.addEventListener("DOMContentLoaded", function () {
       x17y17: "N",
   };
 
+  const emptyValues = {
+    x3y1: "",
+    x4y1: "",
+    x5y1: "",
+    x6y1: "",
+    x7y1: "",
+    x8y1: "",
+    x9y1: "",
+    x10y1: "",
+    x11Y1: "",
+    x12y1: "",
+    x8y3: "",
+    x9y3: "",
+    x10y3: "",
+    x11y3: "",
+    x12y3: "",
+    x13y3: "",
+    x14y3: "",
+    x15y3: "",
+    x16y3: "",
+    x1y4: "",
+    x2y4: "",
+    x3y4: "",
+    x4y4: "",
+    x5y4: "",
+    x6y4: "",
+    x7y4: "",
+    x8y4: "",
+    x7y7: "",
+    x8y7: "",
+    x9y7: "",
+    x10y7: "",
+    x11y7: "",
+    x12y7: "",
+    x13y7: "",
+    x14y7: "",
+    x15y7: "",
+    x10y9: "",
+    x11y9: "",
+    x12y9: "",
+    x13y9: "",
+    x14y9: "",
+    x15y9: "",
+    x16y9: "",
+    x17y9: "",
+    x10y11: "",
+    x11y11: "",
+    x12y11: "",
+    x13y11: "",
+    x14y11: "",
+    x15y11: "",
+    x6y14: "",
+    x7y14: "",
+    x8y14: "",
+    x9y14: "",
+    x10y14: "",
+    x11y14: "",
+    x12y14: "",
+    x13y14: "",
+    x14y14: "",
+    x15y14: "",
+    x12y5: "",
+    x13y5: "",
+    x14y5: "",
+    x15y5: "",
+    x16y5: "",
+    x17y5: "",
+    x5y4: "",
+    x5y5: "",
+    x5y6: "",
+    x5y7: "",
+    x5y8: "",
+    x5y9: "",
+    x5y10: "",
+    x5y11: "",
+    x5y12: "",
+    x8y1: "",
+    x8y2: "",
+    x8y3: "",
+    x8y4: "",
+    x8y5: "",
+    x8y6: "",
+    x8y7: "",
+    x8y8: "",
+    x8y9: "",
+    x8y10: "",
+    x8y11: "",
+    x8y12: "",
+    x8y13: "",
+    x11y6: "",
+    x11y7: "",
+    x11y8: "",
+    x11y9: "",
+    x11y10: "",
+    x11y11: "",
+    x17y7: "",
+    x17y8: "",
+    x17y9: "",
+    x17y10: "",
+    x17y11: "",
+    x17y12: "",
+    x17y13: "",
+    x17y14: "",
+    x17y15: "",
+    x17y16: "",
+    x17y17: ""
+  };
+
   // listener for input changes
   document.getElementById("gameboard").addEventListener("input", function (event) {
-      const cell = event.target;
-      const coordinates = cell.id;
+    const cell = event.target;
+    const coordinates = cell.id;
 
-      // check if the cell has a correct answer defined
-      if (correctAnswers.hasOwnProperty(coordinates)) {
-          const correctAnswer = correctAnswers[coordinates];
-          const userInput = cell.innerText.toUpperCase(); // bc input case-insensitive
+    console.log("cell: ", cell)
+    console.log("coordinates: ", coordinates)
 
-          // compare user input with correct answer
-          if (userInput === correctAnswer) {
-              console.log("Correct!");
-          } else {
-              console.log("Incorrect!");
+    if (correctAnswers.hasOwnProperty(coordinates)) {
+        const userInput = cell.innerText.toUpperCase(); // bc input case-insensitive
+        // Update the emptyValues with user input
+        emptyValues[coordinates] = userInput;
+
+        console.log("emptyValues[coordinates]: ", emptyValues[coordinates])
+        
+        // Save to localStorage
+        localStorage.setItem('userInputs', JSON.stringify(emptyValues));
+
+        console.log("emptyValues: ", emptyValues)
+
+        // Compare user input with correct answer
+        if (userInput === correctAnswers[coordinates]) {
+            console.log("Correct!");
+        } else {
+            console.log("Incorrect!");
+        }
+    }
+});
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Load saved inputs from localStorage
+  const savedInputs = JSON.parse(localStorage.getItem('userInputs'));
+
+  if (savedInputs) {
+      Object.entries(savedInputs).forEach(([key, value]) => {
+          const cell = document.getElementById(key);
+          if (cell) {
+              cell.innerText = value;
           }
-      }
-  });
+      });
+  }
 });
 
+// arrow key nav
 
+
+
+/*----- functions -----*/
+
+// init();
+
+// define init function here...then call render()
+
+//function init() {
+
+    // call render function here
+//};
+
+// render: 
+
+// function for checking if letter/word is correct:
