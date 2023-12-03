@@ -1,5 +1,14 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-size: 3vmin;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 body {
@@ -7,36 +16,49 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-header {
-    font-size: 3vmin;
-    text-align: center;
-    margin-top: 10px;
+.columns {
+    display: flex;
 }
 
 #gameboard {
-    margin-top: 3em;
     border-collapse: collapse;
     cursor: pointer;
 }
 
 #gameboard td[contenteditable="true"] {
     border: .5px solid black;
-    width: 30px;  
-    height: 30px;  
+    width: 32px;
+    height: 32px;
     text-align: center;
-    font-size: 16px; 
+    font-size: 16px;
 }
 
 #gameboard td[contenteditable="true"]:focus {
-    outline: none; 
-    border: 1.5px solid black; 
+    outline: none;
+    border: 1.5px solid black;
+}
+
+#acrosswords,
+#downwords {
+    flex: 1;
+    margin-top: 10em;
+}
+
+#downwords {
+    padding-right: 25px;
+    margin-left: 30px;
+}
+
+#acrosswords {
+    padding-left: 25px;
+    margin-right: 30px;
 }
 
 #clearButton {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 3px;
 }
-
-
-
