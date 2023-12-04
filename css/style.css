@@ -26,6 +26,15 @@ body {
     display: flex;
 }
 
+#titlelink, #titlelink:link, #titlelink:visited {
+    color: black;
+    text-decoration: none; /* Optional: Remove underline for links */
+}
+
+#titlelink:hover {
+    color: rgb(223, 199, 98);
+    text-decoration: none; /* Optional: Remove underline for links */
+}
 #gameboard {
     border-collapse: collapse;
     font-family: Arial, Helvetica, sans-serif;
@@ -89,6 +98,7 @@ td[contenteditable="true"]::before {
 #clearButton {
     margin-top: 10px;
     margin-bottom: 32px;
+    margin-right: 5px;
     padding: 2.5px;
     border-radius: 4px;
     font-family: 'Cutive Mono', monospace;
@@ -100,13 +110,37 @@ td[contenteditable="true"]::before {
 }
 
 #clearButton:hover {
-    background-color: rgb(165, 63, 63);
+    background-color: rgb(223, 199, 98);
     cursor: pointer;
 } 
 
 #clearButton:active {
-    background-color:  rgb(165, 63, 63);
+    background-color:  rgb(223, 199, 98);
     box-shadow: 0 2px #666;
     transform: translateY(1.5px);
   }
     
+  #fillButton {
+    margin-top: 10px;
+    margin-bottom: 32px;
+    margin-left: 5px;
+    padding: 2.5px;
+    border-radius: 4px;
+    font-family: 'Cutive Mono', monospace;
+    font-weight: 1000;
+    text-transform: uppercase;
+    transition-duration: .3s;
+    background-color: rgb(215, 215, 215);
+    width: 110px;
+}
+
+#fillButton:hover {
+    background-color: rgb(223, 199, 98);
+    cursor: pointer;
+} 
+
+#fillButton:active {
+    background-color:  rgb(223, 199, 98);
+    box-shadow: 0 2px #666;
+    transform: translateY(1.5px);
+  }

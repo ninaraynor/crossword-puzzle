@@ -81,7 +81,6 @@ document.addEventListener('input', function (event) {
 });
 
 
-
 document.querySelectorAll('td').forEach(td => {
   td.addEventListener('input', function() {
     if (this.getAttribute('contenteditable') === 'true') {
@@ -107,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }  
     }  
   ;
-  });
+  })
 });
 
 
@@ -171,23 +170,23 @@ document.addEventListener("DOMContentLoaded", function () {
       x14y11: "A",
       x15y11: "C",
 
-      x6y14:"C",
-      x7y14:"A",
-      x8y14:"S",
-      x9y14:"A",
-      x10y14: "B",
-      x11y14: "L",
-      x12y14: "A",
-      x13y14: "N",
-      x14y14: "C",
-      x15y14: "A",
+      x6y13:"C",
+      x7y13:"A",
+      x8y13:"S",
+      x9y13:"A",
+      x10y13: "B",
+      x11y13: "L",
+      x12y13: "A",
+      x13y13: "N",
+      x14y13: "C",
+      x15y13: "A",
 
-      x12y5: "B",
-      x13y5: "R",
-      x14y5: "A",
-      x15y5: "S",
-      x16y5: "C",
-      x17y5: "O",
+      x12y16: "B",
+      x13y16: "R",
+      x14y16: "A",
+      x15y16: "S",
+      x16y16: "C",
+      x17y16: "O",
 
     // down
       x5y4: "F",
@@ -285,22 +284,22 @@ document.addEventListener("DOMContentLoaded", function () {
     x13y11: "",
     x14y11: "",
     x15y11: "",
-    x6y14: "",
-    x7y14: "",
-    x8y14: "",
-    x9y14: "",
-    x10y14: "",
-    x11y14: "",
-    x12y14: "",
-    x13y14: "",
-    x14y14: "",
-    x15y14: "",
-    x12y5: "",
-    x13y5: "",
-    x14y5: "",
-    x15y5: "",
-    x16y5: "",
-    x17y5: "",
+    x6y13: "",
+    x7y13: "",
+    x8y13: "",
+    x9y13: "",
+    x10y13: "",
+    x11y13: "",
+    x12y13: "",
+    x13y13: "",
+    x14y13: "",
+    x15y13: "",
+    x12y16: "",
+    x13y16: "",
+    x14y16: "",
+    x15y16: "",
+    x16y16: "",
+    x17y16: "",
     x5y4: "",
     x5y5: "",
     x5y6: "",
@@ -362,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Incorrect!");
         }
     }
-});
+  })
 })
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -375,8 +374,154 @@ document.addEventListener("DOMContentLoaded", function () {
           if (cell) {
               cell.innerText = value;
           }
-      });
+      })
   }
 });
 
-const footerString = 'C' + new Date().getFullYear
+
+// check answers button
+function fillBoard(correctAnswers) {
+  for (const coordinates in correctAnswers) {
+    const cell = document.getElementById(coordinates);
+    if (cell) {
+      cell.textContent = correctAnswers[coordinates];
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  
+  const correctAnswers = {
+    // across
+      x3y1: "T",
+      x4y1: "A",
+      x5y1: "X",
+      x6y1: "I",
+      x7y1: "D",
+      x8y1: "R",
+      x9y1: "I",
+      x10y1: "V",
+      x11y1: "E",
+      x12y1: "R",
+ 
+      x8y3: "S",
+      x9y3: "H",
+      x10y3: "A",
+      x11y3: "W",
+      x12y3: "S",
+      x13y3: "H",
+      x14y3: "A",
+      x15y3: "N",
+      x16y3: "K",
+
+      x1y4: "S",
+      x2y4: "C",
+      x3y4: "A",
+      x4y4: "R",
+      x5y4: "F",
+      x6y4: "A",
+      x7y4: "C",
+      x8y4: "E",
+
+      x7y7: "G",
+      x8y7: "O",
+      x9y7: "D",
+      x10y7: "F",
+      x11y7: "A",
+      x12y7: "T",
+      x13y7: "H",
+      x14y7: "E",
+      x15y7: "R",
+
+      x10y9: "K",
+      x11y9: "I",
+      x12y9: "L",
+      x13y9: "L",
+      x14y9: "B",
+      x15y9: "I",
+      x16y9: "L",
+      x17y9: "L",
+
+      x10y11: "Z",
+      x11y11: "O",
+      x12y11: "D",
+      x13y11: "I",
+      x14y11: "A",
+      x15y11: "C",
+
+      x6y13:"C",
+      x7y13:"A",
+      x8y13:"S",
+      x9y13:"A",
+      x10y13: "B",
+      x11y13: "L",
+      x12y13: "A",
+      x13y13: "N",
+      x14y13: "C",
+      x15y13: "A",
+
+      x12y16: "B",
+      x13y16: "R",
+      x14y16: "A",
+      x15y16: "S",
+      x16y16: "C",
+      x17y16: "O",
+
+    // down
+      x5y4: "F",
+      x5y5: "I",
+      x5y6: "G",
+      x5y7: "H",
+      x5y8: "T",
+      x5y9: "C",
+      x5y10: "L",
+      x5y11: "U",
+      x5y12: "B",
+
+      x8y1: "R",
+      x8y2: "E",
+      x8y3: "S",
+      x8y4: "E",
+      x8y5: "R",
+      x8y6: "V",
+      x8y7: "O",
+      x8y8: "I",
+      x8y9: "R",
+      x8y10: "D",
+      x8y11: "O",
+      x8y12: "G",
+      x8y13: "S",
+
+      x11y6: "C",
+      x11y7: "A",
+      x11y8: "S",
+      x11y9: "I",
+      x11y10: "N",
+      x11y11: "O",
+     
+      x17y7: "P",
+      x17y8: "U",
+      x17y9: "L",
+      x17y10: "P",
+      x17y11: "F",
+      x17y12: "I",
+      x17y13: "C",
+      x17y14: "T",
+      x17y15: "I",
+      x17y16: "O",
+      x17y17: "N",
+  };
+
+  // fill board button
+  const fillButton = document.getElementById('fillButton');
+  fillButton.addEventListener('click', function () {
+    fillBoard(correctAnswers);
+  });
+});
+
+
+
+
+
+
+
