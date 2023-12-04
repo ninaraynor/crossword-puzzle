@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
       x8y1: "R",
       x9y1: "I",
       x10y1: "V",
-      x11Y1: "E",
+      x11y1: "E",
       x12y1: "R",
  
       x8y3: "S",
