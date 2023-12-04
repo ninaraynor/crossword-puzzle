@@ -61,7 +61,6 @@ let isSuccess;
 /*----- cached elements -----*/
 
 
-
 /*----- event listeners -----*/
 
 // stop cells from expaning when pressing 'return'
@@ -348,20 +347,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const cell = event.target;
     const coordinates = cell.id;
 
-    console.log("cell: ", cell)
-    console.log("coordinates: ", coordinates)
 
     if (correctAnswers.hasOwnProperty(coordinates)) {
         const userInput = cell.innerText.toUpperCase(); // bc input case-insensitive
-        // Update the emptyValues with user input
-        emptyValues[coordinates] = userInput;
 
-        console.log("emptyValues[coordinates]: ", emptyValues[coordinates])
-        
+        emptyValues[coordinates] = userInput;
         // Save to localStorage
         localStorage.setItem('userInputs', JSON.stringify(emptyValues));
-
-        console.log("emptyValues: ", emptyValues)
 
         // Compare user input with correct answer
         if (userInput === correctAnswers[coordinates]) {
@@ -387,24 +379,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// arrow key nav
-
-
-
-/*----- functions -----*/
-
-
-
-
-// init();
-
-// define init function here...then call render()
-
-//function init() {
-
-    // call render function here
-//};
-
-// render: 
-
-// function for checking if letter/word is correct:
+const footerString = 'C' + new Date().getFullYear
