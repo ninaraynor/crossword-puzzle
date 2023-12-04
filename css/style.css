@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     font-size: 2vmin;
     text-align: center;
@@ -40,6 +44,18 @@ body {
     position: relative;
 }
 
+td[contenteditable="true"]::before {
+    content: attr(placeholder); 
+    color: black;
+    font-size: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    padding: 1.5px;
+}
+
 #gameboard td[contenteditable="true"]:hover {
     background-color: #f0f0f0;
 }
@@ -71,35 +87,26 @@ body {
 }
 
 #clearButton {
-    margin-top: 6px;
-    margin-bottom: 38px;
-    padding: 3px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    padding: 2.5px;
+    border-radius: 4px;
     font-family: 'Cutive Mono', monospace;
     font-weight: 1000;
+    text-transform: uppercase;
     transition-duration: .3s;
     background-color: rgb(215, 215, 215);
+    width: 110px;
 }
 
 #clearButton:hover {
-    background-color: rgb(194, 73, 73);
+    background-color: rgb(165, 63, 63);
     cursor: pointer;
 } 
 
-
-td[contenteditable="true"]::before {
-    content: attr(placeholder); 
-    color: black;
-    font-size: 7px;
-    font-family: 'Times New Roman', Times, serif;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(0, 0);
-    padding: 1.5px;
-}
-
-
-
-
-
-
+#clearButton:active {
+    background-color:  rgb(165, 63, 63);
+    box-shadow: 0 2px #666;
+    transform: translateY(1.5px);
+  }
+    
