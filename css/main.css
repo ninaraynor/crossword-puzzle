@@ -1,39 +1,67 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    font-size: 2vmin;
-    text-align: center;
-    margin-top: 3em;
-    margin-bottom: .5em;
-    font-family: 'Cutive Mono', monospace;
-    letter-spacing: -.5px;
-    text-transform: uppercase;
+    padding: 20px;
     align-items: center;
+    border: 2.5px solid black;
+    background: radial-gradient(circle at 100px 100px, rgb(238, 180, 133), rgb(249, 148, 65));
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+h1 {
+    text-align: justify;
+    font-size: 4.4vmin;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 26px;
+    position: absolute;
+}
+
+h2 {
+    border: 2.5px solid black;
+    text-align: justify;
+    font-size: 4.4vmin;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 26px;
+    position: relative;
+    padding: 2px 5px 2px 5px;
 }
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border: 50px solid rgb(220, 216, 205);
+    margin: 0;
 }
 
 #playButton {
-    margin-bottom: 32px;
-    padding: 1px;
+    margin-bottom: 30px;
+    padding: 2px;
     border-radius: 4px;
     font-family: 'Cutive Mono', monospace;
-    font-size: 4vmin;
+    font-size: 3vmin;
     font-weight: 1000;
     text-transform: uppercase;
     background-color: rgb(215, 215, 215);
-    width: 180px;
+    width: 150px;
     height: 40px;
 }
 

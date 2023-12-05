@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 
 header {
@@ -7,10 +8,16 @@ header {
     text-align: center;
     margin-top: 3em;
     margin-bottom: .5em;
-    font-family: 'Cutive Mono', monospace;
-    letter-spacing: -.5px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
     text-transform: uppercase;
     align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+header :hover {
+    background-color: rgb(242, 146, 67);
 }
 
 body {
@@ -51,6 +58,7 @@ body {
     min-height: 30px;
     cursor: pointer;
     position: relative;
+    background-color: rgb(241, 238, 228);
 }
 
 td[contenteditable="true"]::before {
@@ -66,7 +74,7 @@ td[contenteditable="true"]::before {
 }
 
 #gameboard td[contenteditable="true"]:hover {
-    background-color: #f0f0f0;
+    background-color: rgb(242, 146, 67);
 }
 
 #gameboard td[contenteditable="true"]:focus {
@@ -105,7 +113,7 @@ td[contenteditable="true"]::before {
     font-weight: 1000;
     text-transform: uppercase;
     transition-duration: .3s;
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(220, 216, 205);;
     width: 110px;
 }
 
@@ -130,7 +138,7 @@ td[contenteditable="true"]::before {
     font-weight: 1000;
     text-transform: uppercase;
     transition-duration: .3s;
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(220, 216, 205);;
     width: 110px;
 }
 
