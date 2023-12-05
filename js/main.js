@@ -43,13 +43,7 @@ const gameBoard = {
       ],
     };
 
-    
-  // accessing a clue and answer
-  const firstAcrossClue = answerClue.across[0].clue;
-  const firstAcrossAnswer = answerClue.across[0].answer;
-    
-  console.log(`First Across Clue: ${firstAcrossClue}`);
-  console.log(`First Across Answer: ${firstAcrossAnswer}`);
+    const correctAnswers = [];
     
 
 /*----- state variables -----*/
@@ -58,12 +52,9 @@ let wordAcross;
 let wordDown;
 let isSuccess;
 
-/*----- cached elements -----*/
-
-
 /*----- event listeners -----*/
 
-// stop cells from expaning when pressing 'return'
+// stop cells from expanding when pressing 'return'
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
       event.preventDefault();
@@ -73,13 +64,11 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-
 document.addEventListener('input', function (event) {
   if (event.target.matches('.crossword-cell[contenteditable="true"]')) {
       const userInput = event.target.textContent;
   }
 });
-
 
 document.querySelectorAll('td').forEach(td => {
   td.addEventListener('input', function() {
@@ -91,10 +80,9 @@ document.querySelectorAll('td').forEach(td => {
   });
 });
 
-
 //  event listener for the "Clear Board" button
 document.addEventListener('DOMContentLoaded', function() {
-  // clear board button
+ 
   const clearButton = document.getElementById('clearButton');
   clearButton.addEventListener('click', function() {
 
@@ -104,8 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cell = document.getElementById(cellId);
         cell.textContent = '';
       }  
-    }  
-  ;
+    }
   })
 });
 
@@ -242,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     x8y1: "",
     x9y1: "",
     x10y1: "",
-    x11Y1: "",
+    x11y1: "",
     x12y1: "",
     x8y3: "",
     x9y3: "",
@@ -346,9 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const cell = event.target;
     const coordinates = cell.id;
 
-
     if (correctAnswers.hasOwnProperty(coordinates)) {
-        const userInput = cell.innerText.toUpperCase(); // bc input case-insensitive
+        const userInput = cell.innerText.toUpperCase(); 
 
         emptyValues[coordinates] = userInput;
         // Save to localStorage
@@ -360,8 +346,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             console.log("Incorrect!");
         }
-    }
-  })
+      }
+    checkForWinner();
+  });
 })
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -520,6 +507,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// check for winner 
+
+function checkForWinner() {
+  for (const coordinates in correctAnswers) {
+    const cell = document.getElementById(coordinates);
+    if (cell) {
+      const userInput = cell.innerText.toUpperCase();
+      if (userInput !== correctAnswers[coordinates]) {
+        return false; 
+      }
+    }
+  } 
+  // winner message
+  const gameBoardElement = document.getElementById('gameboard');
+  const winMessage = document.createElement('div');
+  winMessage.textContent = 'Solved';
+  winMessage.style.color = 'red';
+  winMessage.style.fontSize = '6em';  // Set the font size
+  winMessage.style.position = 'absolute';
+  winMessage.style.textTransform = 'uppercase';
+  winMessage.style.fontFamily = 'Abril Fatface, serif';
+  winMessage.style.letterSpacing = '3px';
+  winMessage.style.fontWeight = '700';
+  winMessage.style.top = '50%';
+  winMessage.style.left = '50%';
+  winMessage.style.transform = 'translate(-50%, -50%) rotate(-5deg)';
+  gameBoardElement.appendChild(winMessage);
+    return true;
+};
 
 
 
