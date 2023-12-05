@@ -1,59 +1,44 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    padding: 20px;
-    align-items: center;
-    border: 2.5px solid black;
-    background: radial-gradient(circle at 100px 100px, rgb(238, 180, 133), rgb(249, 148, 65));
-    border-radius: 50%;
-    width: 200px; 
-    height: 200px;
-    position: absolute;
-    top: 40px;
-    left: 40px;
+    background-color: rgb(241, 238, 228);
+    padding: 10px;
 }
 
 h1 {
-    text-align: justify;
-    font-size: 4.4vmin;
+    text-align: center;
+    font-size: 6vmin;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-top: 26px;
+    font-style: italic;
+    margin: auto;
     position: absolute;
+    top: 46%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    color: rgb(223, 199, 98);
+    background-color: black;
+    padding: 7px 110px 7px 15px;
 }
 
-h2 {
-    border: 2.5px solid black;
-    text-align: justify;
-    font-size: 4.4vmin;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 26px;
-    position: relative;
-    padding: 2px 5px 2px 5px;
+h1:hover {
+    color: rgb(242, 146, 67);
+    background-color: rgb(223, 199, 98);
 }
 
 body {
+    background-image: url('imgs/emptygrid.png');
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    margin: 0;
     display: flex;
-    flex-direction:column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 50px solid rgb(220, 216, 205);
-    margin: 0;
+    min-height: 100vh;
 }
 
 #playButton {
-    margin-bottom: 30px;
     padding: 2px;
     border-radius: 4px;
     font-family: 'Cutive Mono', monospace;
@@ -63,11 +48,32 @@ body {
     background-color: rgb(215, 215, 215);
     width: 150px;
     height: 40px;
+    top: 55%;
+    left: 57%;
+}
+
+#playButton:hover {
+    background-color: rgb(223, 199, 98);
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#playButton {
+    padding: 2px;
+    border-radius: 4px;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 3vmin;
+    font-weight: 1000;
+    text-transform: uppercase;
+    background-color: rgb(215, 215, 215);
+    width: 150px;
+    height: 40px;
+    position: absolute;
 }
 
 #playButton:hover {
     background-color: rgb(223, 199, 98);
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-} 
-
+}
