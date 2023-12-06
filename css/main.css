@@ -28,8 +28,8 @@ h1:hover {
 
 body {
     background-image: url('imgs/emptygrid.png');
-    background-size: cover; /* Adjust as needed */
-    background-position: center; /* Center the background image */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
     margin: 0;
     display: flex;

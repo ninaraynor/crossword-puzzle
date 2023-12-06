@@ -18,7 +18,7 @@ header {
 
 header:hover {
     transition: all 0.8s;
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 body {
@@ -91,7 +91,8 @@ td[contenteditable="true"]::before {
     word-spacing: -1px;
     letter-spacing: .5px;
     line-height: 22px;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 #downwords {
