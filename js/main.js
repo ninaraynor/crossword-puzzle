@@ -41,7 +41,8 @@ const answerClue = {
     ],
   };
 
-const correctAnswers = [];
+const correctAnswers = {};
+const emptyValues = {};
   
 /*----- state variables -----*/
 let selectedCell;
@@ -96,7 +97,7 @@ clearButton.addEventListener('click', function() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-const correctAnswers = {
+correctAnswers = {
   // across
     x3y1: "T",
     x4y1: "A",
@@ -217,7 +218,7 @@ const correctAnswers = {
     x17y17: "N",
   };
 
-const emptyValues = {
+emptyValues = {
     x3y1: "",
     x4y1: "",
     x5y1: "",
@@ -499,6 +500,7 @@ const correctAnswers = {
     x17y17: "N",
   };
 
+  
 // fill board button
 const fillButton = document.getElementById('fillButton');
 fillButton.addEventListener('click', function () {
@@ -508,8 +510,10 @@ fillButton.addEventListener('click', function () {
 
 // check for winner 
 function checkForWinner() {
-for (const coordinates in correctAnswers) {
+  console.log("correctAnswers",correctAnswers)
+for (const coordinates in correctAnswers) { 
   const cell = document.getElementById(coordinates);
+  console.log("cell=",cell)
   if (cell) {
     const userInput = cell.innerText.toUpperCase();
     if (userInput !== correctAnswers[coordinates]) {
@@ -534,7 +538,3 @@ for (const coordinates in correctAnswers) {
     gameBoardElement.appendChild(winMessage);
       return true;
     };
-
-
-
-
