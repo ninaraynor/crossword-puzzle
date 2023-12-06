@@ -349,18 +349,23 @@ document.getElementById("gameboard").addEventListener("input", function (event) 
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-// load saved inputs from localStorage
-const savedInputs = JSON.parse(localStorage.getItem('userInputs'));
+  // load saved inputs from localStorage
+  const savedInputs = JSON.parse(localStorage.getItem('userInputs'));
 
-if (savedInputs) {
-    Object.entries(savedInputs).forEach(([key, value]) => {
-        const cell = document.getElementById(key);
-        if (cell) {
-            cell.innerText = value;
-        }
-    })
+  if (savedInputs) {
+      Object.entries(savedInputs).forEach(([key, value]) => {
+          const cell = document.getElementById(key);
+          if (cell) {
+              cell.innerText = value;
+          }
+      });
   }
+
+  window.addEventListener('beforeunload', function () {
+    localStorage.removeItem('userInputs');
+  });
 });
+
 
 // check answers button
 function fillBoard(correctAnswers) {
